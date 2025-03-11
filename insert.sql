@@ -227,6 +227,7 @@ INSERT INTO FINCAS (
 (1009, 9, 8, 1, 4, 9, 'Mazatenango, Suchitepéquez', 600.00, 'Comodato', 'Activo'),
 (1010, 10, 9, 2, 2, 10, 'Jalapa Centro', 550.00, 'Propia', 'Activo');
 
+SELECT * FROM FINCAS;
 
 -- ===============================
 -- Datos de ejemplo para PROPIETARIOS
@@ -236,21 +237,42 @@ VALUES ('Carlos López', '1234567890101', 'Calle Los Pinos 5-12, Ciudad de Guate
 INSERT INTO PROPIETARIOS (nombre, dpi, direccion, telefono, email, nacionalidad, fecha_nacimiento) 
 VALUES ('Ana González', '1098765432101', 'Avenida Las Flores 8-90, Antigua Guatemala', '502-8765-4321', 'ana.gonzalez@example.com', 'Guatemalteca', '1985-08-20');
 
+SELECT * FROM PROPIETARIOS;
 -- ===============================
 -- Datos de ejemplo para FINCA_PROPIETARIO
 -- ===============================
 INSERT INTO FINCA_PROPIETARIO (finca_id, propietario_id, fecha_adquisicion) 
-VALUES (1, 1, '2023-04-10');
-INSERT INTO FINCA_PROPIETARIO (finca_id, propietario_id, fecha_adquisicion) 
-VALUES (2, 2, '2023-04-12');
+VALUES (31, 1, '2023-04-10');
+INSERT INTO FINCA_PROPIETARIO (finca_id, propietario_id, fecha_adquisicion)
+VALUES (32, 2, '2023-04-12');
+INSERT INTO FINCA_PROPIETARIO (finca_id, propietario_id, fecha_adquisicion)
+VALUES (33, 1, '2023-04-15');
+INSERT INTO FINCA_PROPIETARIO (finca_id, propietario_id, fecha_adquisicion)
+VALUES (34, 2, '2023-04-16');
+INSERT INTO FINCA_PROPIETARIO (finca_id, propietario_id, fecha_adquisicion)
+VALUES (35, 1, '2023-04-20');
+INSERT INTO FINCA_PROPIETARIO (finca_id, propietario_id, fecha_adquisicion)
+VALUES (36, 2, '2023-04-22');
+INSERT INTO FINCA_PROPIETARIO (finca_id, propietario_id, fecha_adquisicion)
+VALUES (37, 1, '2023-04-22');
+INSERT INTO FINCA_PROPIETARIO (finca_id, propietario_id, fecha_adquisicion)
+VALUES (38, 2, '2023-04-25');
+INSERT INTO FINCA_PROPIETARIO (finca_id, propietario_id, fecha_adquisicion)
+VALUES (39, 1, '2023-04-30');
+INSERT INTO FINCA_PROPIETARIO (finca_id, propietario_id, fecha_adquisicion)
+VALUES (40, 2, '2023-05-01');
+
+SELECT * FROM FINCA_PROPIETARIO;
 
 -- ===============================
 -- Datos de ejemplo para INSCRIPCIONES
 -- ===============================
 INSERT INTO INSCRIPCIONES (finca_id, descripcion, fecha) 
-VALUES (1, 'Inscripción inicial de la finca en Ciudad de Guatemala', '2023-04-15');
+VALUES (31, 'Inscripción inicial de la finca en Ciudad de Guatemala', '2023-04-15');
 INSERT INTO INSCRIPCIONES (finca_id, descripcion, fecha) 
-VALUES (2, 'Inscripción complementaria en Mixco', '2023-04-16');
+VALUES (32, 'Inscripción complementaria en Mixco', '2023-04-16')
+
+SELECT * FROM INSCRIPCIONES;
 
 -- ===============================
 -- Datos de ejemplo para TIPOS_GRAVAMENES
@@ -272,33 +294,34 @@ VALUES ('Cancelado');
 -- Datos de ejemplo para GRAVAMENES
 -- ===============================
 INSERT INTO GRAVAMENES (finca_id, tipo_id, estado_id, descripcion, monto, entidad_financiera, fecha_registro, fecha_vencimiento) 
-VALUES (1, 1, 1, 'Hipoteca por valor de Q100,000', 100000.00, 'Banco Industrial', '2023-05-01', '2033-05-01');
+VALUES (35, 1, 1, 'Hipoteca por valor de Q100,000', 100000.00, 'Banco Industrial', '2023-05-01', '2033-05-01');
 INSERT INTO GRAVAMENES (finca_id, tipo_id, estado_id, descripcion, monto, entidad_financiera, fecha_registro, fecha_vencimiento) 
-VALUES (2, 2, 2, 'Embargo por deuda de Q50,000', 50000.00, 'Banco G&T Continental', '2023-06-01', '2033-06-01');
+VALUES (38, 2, 2, 'Embargo por deuda de Q50,000', 50000.00, 'Banco G&T Continental', '2023-06-01', '2033-06-01');
 
 -- ===============================
 -- Datos de ejemplo para ANOTACIONES
 -- ===============================
 INSERT INTO ANOTACIONES (finca_id, descripcion, fecha) 
-VALUES (1, 'Anotación de revisión catastral en Ciudad de Guatemala', '2023-05-15');
+VALUES (39, 'Anotación de revisión catastral en Ciudad de Guatemala', '2023-05-15');
 INSERT INTO ANOTACIONES (finca_id, descripcion, fecha) 
-VALUES (2, 'Anotación de inspección en Mixco', '2023-05-20');
+VALUES (38, 'Anotación de inspección en Mixco', '2023-05-20');
 
 -- ===============================
 -- Datos de ejemplo para PROPIEDADES_HORIZONTALES
 -- ===============================
 INSERT INTO PROPIEDADES_HORIZONTALES (finca_id, propietario_id, unidad, tipo, area, piso, descripcion) 
-VALUES (1, 1, 'Apt 101', 'Apartamento', 75.50, '1', 'Apartamento en primer piso, Ciudad de Guatemala');
+VALUES (36, 1, 'Apt 101', 'Apartamento', 75.50, '1', 'Apartamento en primer piso, Ciudad de Guatemala');
 INSERT INTO PROPIEDADES_HORIZONTALES (finca_id, propietario_id, unidad, tipo, area, piso, descripcion) 
-VALUES (2, 2, 'Oficina 201', 'Local Comercial', 120.00, '2', 'Oficina en segundo piso, Mixco');
+VALUES (37, 2, 'Oficina 201', 'Local Comercial', 120.00, '2', 'Oficina en segundo piso, Mixco');
 
+SELECT * FROM PROPIEDADES_HORIZONTALES;
 -- ===============================
 -- Datos de ejemplo para AMENIDADES
 -- ===============================
 INSERT INTO AMENIDADES (propiedad_horizontal_id, nombre, descripcion) 
-VALUES (1, 'Piscina', 'Piscina comunitaria en edificio residencial');
+VALUES (2, 'Piscina', 'Piscina comunitaria en edificio residencial');
 INSERT INTO AMENIDADES (propiedad_horizontal_id, nombre, descripcion) 
-VALUES (2, 'Gimnasio', 'Gimnasio equipado para uso de residentes');
+VALUES (3, 'Gimnasio', 'Gimnasio equipado para uso de residentes');
 
 -- ===============================
 -- Datos de ejemplo para TIPOS_SERVIDUMBRES
@@ -312,39 +335,41 @@ VALUES ('Acueducto', 'Servidumbre para conducción de agua');
 -- Datos de ejemplo para SERVIDUMBRES
 -- ===============================
 INSERT INTO SERVIDUMBRES (finca_id, tipo_servidumbre_id, descripcion, fecha_registro) 
-VALUES (1, 1, 'Servidumbre de paso en terreno adyacente, Ciudad de Guatemala', '2023-07-01');
+VALUES (31, 1, 'Servidumbre de paso en terreno adyacente, Ciudad de Guatemala', '2023-07-01');
 INSERT INTO SERVIDUMBRES (finca_id, tipo_servidumbre_id, descripcion, fecha_registro) 
-VALUES (2, 2, 'Servidumbre para acueducto en Mixco', '2023-07-02');
+VALUES (32, 2, 'Servidumbre para acueducto en Mixco', '2023-07-02');
 
 -- ===============================
 -- Datos de ejemplo para COLINDANTES
 -- ===============================
 INSERT INTO COLINDANTES (finca_id, direccion, propietario_colindante) 
-VALUES (1, 'Calle vecina 10, Zona 1, Ciudad de Guatemala', 'Propietario X');
+VALUES (35, 'Calle vecina 10, Zona 1, Ciudad de Guatemala', 'Propietario X');
 INSERT INTO COLINDANTES (finca_id, direccion, propietario_colindante) 
-VALUES (2, 'Avenida Central, Mixco', 'Propietario Y');
+VALUES (36, 'Avenida Central, Mixco', 'Propietario Y');
 
 -- ===============================
 -- Datos de ejemplo para COORDENADAS
 -- ===============================
 INSERT INTO COORDENADAS (finca_id, latitud, longitud, referencia) 
-VALUES (1, 14.6349, -90.5069, 'Centro de Ciudad de Guatemala');
+VALUES (31, 14.6349, -90.5069, 'Centro de Ciudad de Guatemala');
 INSERT INTO COORDENADAS (finca_id, latitud, longitud, referencia) 
-VALUES (2, 14.6500, -90.5000, 'Zona 5, Mixco');
+VALUES (32, 14.6500, -90.5000, 'Zona 5, Mixco');
 
 -- ===============================
 -- Datos de ejemplo para ACTOS_O_NEGOCIOS
 -- ===============================
 INSERT INTO ACTOS_O_NEGOCIOS (finca_propietario_id, fecha, valor_transaccion, notario, descripcion) 
-VALUES (1, '2023-08-01', 120000.00, 'Notario Juan Pérez', 'Transacción de compraventa en Ciudad de Guatemala');
+VALUES (2, '2023-08-01', 120000.00, 'Notario Juan Pérez', 'Transacción de compraventa en Ciudad de Guatemala');
 INSERT INTO ACTOS_O_NEGOCIOS (finca_propietario_id, fecha, valor_transaccion, notario, descripcion) 
-VALUES (2, '2023-08-05', 80000.00, 'Notario Ana Martínez', 'Transacción de donación en Mixco');
+VALUES (3, '2023-08-05', 80000.00, 'Notario Ana Martínez', 'Transacción de donación en Mixco');
+
+SELECT * FROM ACTOS_O_NEGOCIOS;
 
 -- ===============================
 -- Datos de ejemplo para COMPRAVENTA
 -- ===============================
 INSERT INTO COMPRAVENTA (acto_id, comprador_id, vendedor_id, precio, fecha) 
-VALUES (1, 2, 1, 120000.00, '2023-08-10');
+VALUES (2, 2, 1, 120000.00, '2023-08-10');
 
 -- ===============================
 -- Datos de ejemplo para DONACION
@@ -356,34 +381,34 @@ VALUES (2, 2, 1, 'Sin condición', '2023-08-15');
 -- Datos de ejemplo para PERMUTA
 -- ===============================
 INSERT INTO PERMUTA (acto_id, propietario1_id, propietario2_id, descripcion, fecha) 
-VALUES (1, 1, 2, 'Permuta de inmuebles en Ciudad de Guatemala', '2023-08-20');
+VALUES (3, 1, 2, 'Permuta de inmuebles en Ciudad de Guatemala', '2023-08-20');
 
 -- ===============================
 -- Datos de ejemplo para SUCESION_HEREDITARIA_TESTAMENTARIA
 -- ===============================
 INSERT INTO SUCESION_HEREDITARIA_TESTAMENTARIA (acto_id, causante_id, heredero_id, testamento, fecha) 
-VALUES (1, 1, 2, 'Testamento registrado en Guatemala', '2023-08-25');
+VALUES (2, 1, 2, 'Testamento registrado en Guatemala', '2023-08-25');
 
 -- ===============================
 -- Datos de ejemplo para SUCESION_HEREDITARIA_INTESTADA
 -- ===============================
 INSERT INTO SUCESION_HEREDITARIA_INTESTADA (acto_id, causante_id, heredero_id, resolucion_judicial, fecha) 
-VALUES (1, 2, 1, 'Resolución judicial emitida en Guatemala', '2023-08-30');
+VALUES (3, 2, 1, 'Resolución judicial emitida en Guatemala', '2023-08-30');
 
 -- ===============================
 -- Datos de ejemplo para TITULACION_SUPLETORIA
 -- ===============================
 INSERT INTO TITULACION_SUPLETORIA (acto_id, solicitante_id, resolucion, fecha) 
-VALUES (1, 1, 'Resolución de titulación emitida por autoridad catastral', '2023-09-01');
+VALUES (3, 1, 'Resolución de titulación emitida por autoridad catastral', '2023-09-01');
 
 -- ===============================
 -- Datos de ejemplo para ADJUDICACION
 -- ===============================
 INSERT INTO ADJUDICACION (acto_id, beneficiario_id, motivo, fecha) 
-VALUES (1, 2, 'Adjudicación por herencia en Guatemala', '2023-09-05');
+VALUES (3, 2, 'Adjudicación por herencia en Guatemala', '2023-09-05');
 
 -- ===============================
 -- Datos de ejemplo para DESMEMBRACION
 -- ===============================
 INSERT INTO DESMEMBRACION (acto_id, propietario_id, descripcion, fecha) 
-VALUES (1, 1, 'Desmembración de la propiedad en Ciudad de Guatemala', '2023-09-10');
+VALUES (2, 1, 'Desmembración de la propiedad en Ciudad de Guatemala', '2023-09-10');
