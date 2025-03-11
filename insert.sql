@@ -127,6 +127,9 @@ INSERT INTO MUNICIPIOS (departamento_id, nombre) VALUES
 INSERT INTO AREAS (nombre, descripcion) VALUES 
 ('Urbana', 'Área urbana'),
 ('Rural', 'Área rural');
+INSERT INTO AREAS (nombre, descripcion) VALUES 
+('Comercial', 'Área comercial'),
+('Industrial', 'Área industrial');
 
 -- ===============================
 -- Datos de ejemplo para USOS
@@ -134,6 +137,8 @@ INSERT INTO AREAS (nombre, descripcion) VALUES
 INSERT INTO USOS (tipo) VALUES ('Residencial');
 INSERT INTO USOS (tipo) VALUES ('Comercial');
 INSERT INTO USOS (tipo) VALUES ('Agrícola');
+INSERT INTO USOS (tipo) VALUES ('Industrial');
+
 
 -- ===============================
 -- Datos de ejemplo para PLANOS
@@ -142,6 +147,24 @@ INSERT INTO PLANOS (numero_plano, archivo_plano, fecha_registro, descripcion, es
 VALUES ('PL-001', 'ruta/planos/PL-001.pdf', '2023-01-15', 'Plano aprobado de Guatemala', 'Aprobado');
 INSERT INTO PLANOS (numero_plano, archivo_plano, fecha_registro, descripcion, estado) 
 VALUES ('PL-002', 'ruta/planos/PL-002.pdf', '2023-02-20', 'Plano pendiente en Antigua Guatemala', 'Pendiente');
+INSERT INTO PLANOS (numero_plano, archivo_plano, fecha_registro, descripcion, estado)
+VALUES ('PL-003', 'ruta/planos/PL-003.pdf', '2023-03-25', 'Plano aprobado de Mixco', 'Aprobado');
+INSERT INTO PLANOS (numero_plano, archivo_plano, fecha_registro, descripcion, estado)
+VALUES ('PL-004', 'ruta/planos/PL-004.pdf', '2023-04-30', 'Plano aprobado de Ciudad de Guatemala', 'Aprobado');
+INSERT INTO PLANOS (numero_plano, archivo_plano, fecha_registro, descripcion, estado)
+VALUES ('PL-005', 'ruta/planos/PL-005.pdf', '2023-05-05', 'Plano aprobado de Antigua Guatemala', 'Aprobado');
+INSERT INTO PLANOS (numero_plano, archivo_plano, fecha_registro, descripcion, estado)
+VALUES ('PL-006', 'ruta/planos/PL-006.pdf', '2023-06-10', 'Plano aprobado de Quetzaltenango', 'Aprobado');
+INSERT INTO PLANOS (numero_plano, archivo_plano, fecha_registro, descripcion, estado)
+VALUES ('PL-007', 'ruta/planos/PL-007.pdf', '2023-07-15', 'Plano aprobado de Cobán', 'Aprobado');
+INSERT INTO PLANOS (numero_plano, archivo_plano, fecha_registro, descripcion, estado)
+VALUES ('PL-008', 'ruta/planos/PL-008.pdf', '2023-08-20', 'Plano aprobado de Puerto Barrios', 'Aprobado');
+INSERT INTO PLANOS (numero_plano, archivo_plano, fecha_registro, descripcion, estado)
+VALUES ('PL-009', 'ruta/planos/PL-009.pdf', '2023-09-25', 'Plano aprobado de Mazatenango', 'Aprobado');
+INSERT INTO PLANOS (numero_plano, archivo_plano, fecha_registro, descripcion, estado)
+VALUES ('PL-010', 'ruta/planos/PL-010.pdf', '2023-10-01', 'Plano aprobado de Jalapa', 'Aprobado');
+
+SELECT * FROM PLANOS;
 
 -- ===============================
 -- Datos de ejemplo para LIBROS
@@ -158,12 +181,36 @@ INSERT INTO FOLIOS (libro_id, numero_folio, descripcion)
 VALUES (1, 101, 'Folio inicial');
 INSERT INTO FOLIOS (libro_id, numero_folio, descripcion) 
 VALUES (2, 201, 'Folio secundario');
+INSERT INTO FOLIOS (libro_id, numero_folio, descripcion)
+VALUES (1, 102, 'Folio secundario');
+INSERT INTO FOLIOS (libro_id, numero_folio, descripcion)
+VALUES (2, 202, 'Folio secundario');
+INSERT INTO FOLIOS (libro_id, numero_folio, descripcion)
+VALUES (1, 103, 'Folio secundario');
+INSERT INTO FOLIOS (libro_id, numero_folio, descripcion)
+VALUES (2, 203, 'Folio secundario');
+INSERT INTO FOLIOS (libro_id, numero_folio, descripcion)
+VALUES (1, 104, 'Folio secundario');
+INSERT INTO FOLIOS (libro_id, numero_folio, descripcion)
+VALUES (2, 204, 'Folio secundario');
+INSERT INTO FOLIOS (libro_id, numero_folio, descripcion)
+VALUES (1, 105, 'Folio secundario');
+INSERT INTO FOLIOS (libro_id, numero_folio, descripcion)
+VALUES (2, 205, 'Folio secundario');
+INSERT INTO FOLIOS (libro_id, numero_folio, descripcion)
+VALUES (1, 106, 'Folio secundario');
+INSERT INTO FOLIOS (libro_id, numero_folio, descripcion)
+VALUES (2, 206, 'Folio secundario');
+INSERT INTO FOLIOS (libro_id, numero_folio, descripcion)
+VALUES (1, 107, 'Folio secundario');
+INSERT INTO FOLIOS (libro_id, numero_folio, descripcion)
+VALUES (2, 207, 'Folio secundario');
+
+SELECT * FROM FOLIOS;
 
 -- ===============================
 -- Datos de ejemplo para FINCAS
 -- ===============================
-INSERT INTO FINCAS (numero_finca, folio_id, municipio_id, area_id, uso_id, plano_id, direccion, area_total, tipo_tenencia, estado) 
-VALUES (1002, 2, 3, 2, 2, 2, 'Avenida Reforma, Mixco, Guatemala', 1500.75, 'Arrendada', 'Activo');
 
 INSERT INTO FINCAS (
     numero_finca, folio_id, municipio_id, area_id, uso_id, plano_id, 
